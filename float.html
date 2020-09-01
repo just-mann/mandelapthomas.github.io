@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+        integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <title>Mandela | Home</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            transition: ease-in 0.4s;
+        }
+
+        header {
+            background-color: #ffffff;
+            grid-area: header;
+            text-align: center;
+            height: 100px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            overflow: hidden;
+            color: #000000;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .navbar {
+            background: #00008b;
+            border: 1px solid #00008b;
+            grid-area: navbar;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0;
+        }
+
+        .navLinks {
+            display: flex;
+            list-style: none;
+            padding: 0px;
+        }
+
+        .navLinks a {
+            text-decoration: none;
+            padding: 10px;
+            color: white;
+            transition: ease-in 0.3s;
+        }
+
+        .navLinks a:hover {
+            color: #00008b;
+            background-color: #ffffff;
+        }
+
+        .about {
+            background-color: lightcoral;
+            grid-area: about;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact {
+            background-color: #fbfffb;
+            grid-area: contact;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            /* overflow: auto; */
+            height: auto;
+        }
+
+        .services {
+            background-color: lightskyblue;
+            grid-area: main;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            background-color: black;
+            color: #ffffff;
+            grid-area: footer;
+            text-align: center;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 100px 40px 650px 500px 50px 530px 50px;
+            grid-template-areas:
+
+                'header header header header'
+                'navbar navbar navbar navbar'
+                'main main main main'
+                'about about about about'
+                'social social social social'
+                'contact contact contact contact'
+                'footer footer footer footer'
+            ;
+
+            text-align: center;
+        }
+
+        @media screen and (max-width: 700px) {
+            .container {
+
+                grid-template-rows: 100px 40px 450px 250px 50px 530px 50px;
+                grid-template-areas:
+
+                    'header header header header'
+                    'navbar navbar navbar navbar'
+                    'main main main main'
+                    'about about about about'
+                    'social social social social'
+                    'contact contact contact contact'
+                    'footer footer footer footer'
+                ;
+            }
+        }
+
+        .card {
+            background: lightgray;
+            padding: 20px 30px;
+            min-height: 90%;
+            min-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+            margin: auto;
+        }
+
+        .card h4 {
+            color: #00008b;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        label {
+            /* width: 100%; */
+            text-align: left;
+            overflow: auto;
+        }
+
+        #name,
+        #email,
+        #submit,
+        #message {
+            width: 100%;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0px 5px 0px;
+            border: 1px solid #888181;
+
+        }
+
+        .name,
+        .email,
+        .message {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+        }
+
+        #submit {
+            background: #0000ff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: ease-in 0.3s;
+        }
+
+        #submit:hover {
+            background: #1818b4;
+        }
+
+        #social {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            grid-area: social;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #social i {
+            margin: 0 15px;
+            cursor: pointer;
+            width: 35px;
+        }
+
+        /* Social Media Core Colors & Other Styles */
+        :root {
+            --youtubeColor: #ff0000;
+            --twitterColor: #1da1f2;
+            --facebookColor: #3b5998;
+            --githubColor: #000000;
+            --snapchatColor: #fffc00;
+            --skypeColor: #00aff0;
+            --instagramColor: #c32aa3;
+            --pinterestColor: #bd081c;
+            --linkedInColor: #007bb5;
+            --whatsAppColor: #25d366;
+            --tumblrColor: #35465d;
+            --yelpColor: #d32323;
+            --spotifyColor: #1ed760;
+            --yahooColor: #6001d2;
+            --twitchColor: #9146ff;
+            --soundcloudColor: #ff5500;
+        }
+
+        /* Social Media Colors and Styles */
+        .fab,
+        .fa {
+            cursor: pointer;
+            margin: 0px 5px;
+            font-size: 35px;
+            max-width: 30px;
+        }
+
+        .fa-facebook-square {
+            color: var(--facebookColor);
+        }
+
+        .fa-youtube {
+            color: var(--youtubeColor);
+        }
+
+        .fa-github {
+            color: var(--githubColor);
+        }
+
+        .fa-twitter {
+            color: var(--twitterColor);
+        }
+
+        .fa-snapchat-square {
+            color: var(--snapchatColor);
+        }
+
+        .fa-skype {
+            color: var(--skypeColor);
+        }
+
+        .fa-instagram {
+            color: var(--instagramColor);
+        }
+
+        .fa-linkedin {
+            color: (--linkedInColor);
+        }
+
+        .fa-whatsapp {
+            color: var(--whatsAppColor);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h3><a href="#">Mandela P. Thomas</a></h3>
+        </header>
+        <nav class="navbar">
+            <ul class="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="about" id="about">About Me</div>
+        <div class="social" id="social">
+            <i class="fab fa-facebook-square" title="Facebook"></i>
+            <i class="fab fa-instagram" title="Instagram"></i>
+            <i class="fab fa-snapchat-square" title="SnapChat"></i>
+            <i class="fab fa-youtube" title="YouTube"></i>
+            <i class="fab fa-twitter" title="Twitter"></i>
+            <i class="fab fa-whatsapp" title="WhatsApp"></i>
+            <i class="fab fa-github-square" title="Github"></i>
+
+        </div>
+        <div class="services" id="services">What I do</div>
+        <div class="contact" id="contact">
+            <div class="card">
+                <h4>Contact Me</h4>
+                <form action="process.php">
+                    <div class="name">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="email">
+                        <label for="email" class="email">Email</label>
+                        <input type="text" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="message">
+                        <label for="txtArea" class="textarea">Message</label>
+                        <textarea name="message" id="message" cols="5" rows="10"
+                            placeholder="Please leave a message"></textarea>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" id="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+
+</html>
