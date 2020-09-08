@@ -1,1 +1,0 @@
-# mandelapthomas.github.io
