@@ -165,7 +165,15 @@
             /* width: 100%; */
             text-align: left;
             overflow: auto;
+            position: relative;
         }
+        
+        label::after {
+            content="*";
+            position: absolute;
+            color: red;
+        }
+            
 
         #name,
         #email,
